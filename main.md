@@ -4,11 +4,16 @@
 - There is the possibility of promoting a custom analysis over the traffic, generating specific logs with information that interests the user;
 - This document will adress the process of installing Zeek and its basic cases of use. To obtain further information about the plataform it is valid to consult the [official documentation](docs.zeek.org).
 
-## Zeek structure 
+### Zeek structure 
+
+- Analyzers: Parse the incoming traffic, and divide the payload in units. Each unit have parameters, related to the processing of specific parts of the payload;
+- Events: Whenever Zeek ends the processing of a unit, an event is generated;
+- Scripts: One of the main functions of Zeek Scripts is to generate logs based on the events. In this sense, events can be used as functions in scripts, to define the execution of some commands in the context of the triggering of an event;
+  - In this sense, the parameters defined in the analyzers can be used in the scripts, just like a parameter of a common function.
 
 ## Installation process ⬇️
 
-- There are some different ways to [install](https://zeek.org/get-zeek/) Zeek and, in use case that will be further discussed, Zeek was installed from the current feature source;
+- There are some different ways to [install](https://zeek.org/get-zeek/) Zeek and, in this case, Zeek was installed from the current feature source;
 - In first place, it is necessary to install the dependencies:
 
 ```
@@ -29,9 +34,9 @@ The default installation path is `/usr/local/zeek`.
 
 ## Initial configuration 🔧
 
-- Zeek has two operating ways, real time traffic monitoring and analysing traffic packets (offline);
+Zeek has two operating ways, real time traffic monitoring and analysing traffic packets (offline);
 > ZeekControl is an interactive shell for easily operating/managing Zeek installations on a single system or even across multiple systems in a traffic-monitoring cluster.
-- To set the interace which will be analyzed in real time by ZeekControl, edit the `usr/local/zeek/etc/node.cfg` in the following way:
+To set the interace which will be analyzed in real time by ZeekControl, edit the `usr/local/zeek/etc/node.cfg` in the following way:
 
 ```
 [zeek]
@@ -40,7 +45,7 @@ host=localhost
 interface=eth0   # change this according to your listening interface in ifconfig
 ```
 
-- In this way, whenever Zeek is initalized through ZeekControl, it will analyse the interface which was set in `node.cfg` file.
+In this way, whenever Zeek is initalized through ZeekControl, it will analyse the interface which was set in `node.cfg` file.
 
 ## Analyzing interfaces 🔍
 
