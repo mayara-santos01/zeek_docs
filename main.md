@@ -1,4 +1,4 @@
-#     📃 Zeek documentation 📃
+# Zeek documentation 📃
 
 - Zeek is a traffic monitoring tool which generates logs about the network activities, and, thus, these informations can be used to detect anomalies in the traffic;
 - There is the possibility of promoting a custom analysis over the traffic, generating specific logs with information that interests the user;
@@ -30,7 +30,7 @@ The default installation path is `/usr/local/zeek`.
 ## Initial configuration 🔧
 
 - Zeek has two operating ways, real time traffic monitoring and analysing traffic packets (offline);
-- *"ZeekControl is an interactive shell for easily operating/managing Zeek installations on a single system or even across multiple systems in a traffic-monitoring cluster".*
+> ZeekControl is an interactive shell for easily operating/managing Zeek installations on a single system or even across multiple systems in a traffic-monitoring cluster.
 - To set the interace which will be analyzed in real time by ZeekControl, edit the `usr/local/zeek/etc/node.cfg` in the following way:
 
 ```
