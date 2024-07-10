@@ -71,7 +71,7 @@ One way to generate pcap files is to use tcpdump:
 
 ```sudo tcpdump -i en0 -s 0 -w mypackets.trace```
 
-In this command, `-i` is a parameter used to define the interface which will be analyzed, and `-w` indicates the file in which the content of the traffic will be stored. The `-s 0` argument tells tcpdump to capture whole packets, in cases where it’s not supported, one must use -s 65535 instead.
+In this command, `-i` is a parameter used to define the interface which will be analyzed, and `-w` indicates the file in which the content of the traffic will be stored. The `-s 0` argument tells tcpdump to capture whole packets, in cases where it’s not supported, one must use `-s 65535` instead.
 
 There are other programs which can be used in this process, such as Wireshark.
 
@@ -88,6 +88,14 @@ Zeek uses the standard scripts while reading the files. In order to read the fil
 ```
 zeek -r mypackets.trace my-script.zeek
 ```
+
+In this sense, the logs generated will be stored i the current directory. To save the logs in a different folder, you can run a command just like the following ones:
+
+```
+mkdir output_directory
+zeek -r mypackets.trace Log::default_logdir=output_directory
+```
+
 
 
   
