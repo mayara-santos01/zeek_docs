@@ -1,4 +1,4 @@
-# Zeek documentation 📃
+#     📃 Zeek documentation 📃
 
 - Zeek is a traffic monitoring tool which generates logs about the network activities, and, thus, these informations can be used to detect anomalies in the traffic;
 - There is the possibility of promoting a custom analysis over the traffic, generating specific logs with information that interests the user;
