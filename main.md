@@ -35,7 +35,9 @@ The default installation path is `/usr/local/zeek`.
 ## Initial configuration 🔧
 
 Zeek has two operating ways, real time traffic monitoring and analysing traffic packets (offline);
+
 > ZeekControl is an interactive shell for easily operating/managing Zeek installations on a single system or even across multiple systems in a traffic-monitoring cluster.
+
 To set the interace which will be analyzed in real time by ZeekControl, edit the `usr/local/zeek/etc/node.cfg` in the following way:
 
 ```
@@ -60,7 +62,7 @@ zeekctl # or /usr/local/zeek/bin/zeekctl
 ```
 
 - The installation of zeekctl can be useful in a first time use, and can be also run after any changes to Zeek policy scripts or the ZeekControl configuration;
-- The logs generated are kept in `/usr/local/zeek/bin`. While zeekctl is running, the logs are stored in `/current` file, then, they go to the upper directory;
+- The logs generated are kept in `/usr/local/zeek/logs`. While zeekctl is running, the logs are stored in `/current` folder, then, they go to the upper directory;
 
 Another way to monitor live traffic is to execute a direct command, and the logs generated will be stored in the present directory, for instance:
 
